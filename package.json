@@ -1,0 +1,17 @@
+{
+  "name": "rainy-cafe",
+  "private": true,
+  "workspaces": ["apps/web"],
+  "scripts": {
+    "start": "node scripts/start.mjs",
+    "dev": "npm run dev --workspace apps/web",
+    "build": "npm run build --workspace apps/web",
+    "test": "node scripts/test.mjs",
+    "test:e2e": "playwright test",
+    "record": "node scripts/record.mjs",
+    "package:submission": "uv run --all-packages --locked --cache-dir .cache/uv python scripts/package_submission.py"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.0"
+  }
+}

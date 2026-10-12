@@ -1,0 +1,26 @@
+{
+  // TypeScript 配置支持 JSONC 注释；package.json 则必须保持标准 JSON。
+  "compilerOptions": {
+    // 输出语言目标为 ES2022，面向本项目使用的现代浏览器。
+    "target": "ES2022",
+    // 提供 JS 标准库、浏览器 DOM 和 DOM 集合迭代器的类型定义。
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    // 保留 ES 模块给 Vite 打包；按打包工具的规则解析第三方包及模块路径。
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    // 使用 React 自动 JSX runtime，不要求在每个组件中手动导入 React 默认对象。
+    "jsx": "react-jsx",
+    // 启用严格类型检查，包括空值检查和隐式 any 检查。
+    "strict": true,
+    // tsc 只检查类型，JS、CSS 和资源产物由 Vite 负责输出。
+    "noEmit": true,
+    // 跳过第三方声明文件的内部检查；应用代码的类型检查仍然开启。
+    "skipLibCheck": true,
+    // 允许导入路径包含 .ts / .tsx 后缀，与只检查类型的 noEmit 配合使用。
+    "allowImportingTsExtensions": true,
+    // 保留普通模块导入；纯类型请使用 import type，避免引入多余运行时依赖。
+    "verbatimModuleSyntax": true
+  },
+  // 只检查页面源码；Vite 和 Playwright 的配置由各自工具加载。
+  "include": ["src"]
+}

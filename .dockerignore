@@ -1,0 +1,20 @@
+# 构建镜像只传入必要源码；排除 Git 元数据和本机依赖缓存。
+.git
+.cache
+# Python / Node 依赖在镜像内重新按锁文件安装，不能复制宿主机虚拟环境。
+.venv
+**/.venv
+node_modules
+**/node_modules
+# 排除 Python 字节码与本机前端产物；Dockerfile 会重新构建 dist。
+**/__pycache__
+apps/web/dist
+# 真实密钥由 compose 的 env_file 注入，避免进入镜像构建上下文。
+.env
+# 临时文件、测试报告和录屏产物不参与运行。
+tmp
+test-results
+playwright-report
+output
+# 面试题 PDF 是参考材料，不是服务运行资源。
+*.pdf

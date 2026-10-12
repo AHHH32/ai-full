@@ -1,0 +1,17 @@
+# 本地演示容器配置：docker compose up --build。
+services:
+  cafe:
+    # 以仓库根目录为构建上下文，使用根目录 Dockerfile 与 .dockerignore。
+    build: .
+    # 面向 Linux 的宿主网络：让 aiortc 公布宿主机可达的 UDP 地址。
+    # HTTP 服务直接使用宿主机 7860 端口，因此没有额外的 ports 映射。
+    # Docker Desktop 使用此配置前需要启用宿主网络支持；本机启动可用 npm start。
+    network_mode: host
+    env_file:
+      # 将根目录 .env 注入容器环境，不把密钥文件复制进镜像。
+      # 修改这些值后需重新创建容器，单纯重启现有容器不会重新加载 env_file。
+      - path: .env
+        # .env 不存在也能启动，默认可体验无需密钥的 Mock。
+        required: false
+    # 容器退出后自动恢复；用户主动停止后保持停止。
+    restart: unless-stopped

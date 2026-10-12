@@ -1,0 +1,28 @@
+# Python 应用元信息；依赖由根目录 uv workspace 统一安装与锁定。
+[project]
+# 项目包名与版本，用于依赖解析；前端 npm 包名独立管理。
+name = "rainy-cafe"
+version = "0.1.0"
+description = "A Pipecat-powered interactive scene"
+# 固定 Python 3.12 系列，与根目录 .python-version、Docker 基础镜像一致。
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  # 固定 Pipecat 版本：管线与少量服务适配按此版本验证。
+  # 仅启用 WebRTC 与 LLM；火山语音使用薄适配，不安装其他语音厂商 SDK。
+  "pipecat-ai[webrtc,openai]==1.12.0",
+  # 火山 HTTP 分块合成接口。
+  "httpx>=0.28,<1",
+  # 火山流式识别 WebSocket；使用新版 additional_headers 参数。
+  "websockets>=15,<18",
+  # HTTP API、WebRTC 信令接口及生产静态页面服务。
+  "fastapi>=0.115,<1",
+  # ASGI 服务器；standard 包含开发热重载等配套依赖。
+  "uvicorn[standard]>=0.34,<1",
+  # 从根目录 .env 读取配置；Mock 无需提供该文件。
+  "python-dotenv>=1,<2",
+]
+
+[dependency-groups]
+# 仅用于开发验证：测试框架与异步测试支持；httpx 已作为运行依赖声明。
+# 常规 uv sync 安装 dev 组；Docker 的 --no-dev 排除此组以减少运行时依赖。
+dev = ["pytest>=8", "pytest-asyncio>=0.25"]

@@ -1,0 +1,23 @@
+# 根目录是 uv 工作区配置，Python 应用的依赖声明位于 apps/server/pyproject.toml。
+# 在根目录运行 uv sync --all-packages --locked，共用根目录 .venv 和 uv.lock。
+[tool.uv.workspace]
+# 工作区成员：当前仅包含 Python 后端；React 前端由 npm workspace 管理。
+members = ["apps/server"]
+
+[[tool.uv.index]]
+# 索引名称供 uv 区分源；仅作用于本项目，不修改用户全局 pip / uv 配置。
+name = "huawei"
+# Python 包的国内镜像地址；更换源时应使用 uv 重新生成锁文件中的下载地址。
+url = "https://repo.huaweicloud.com/repository/pypi/simple"
+# 作为默认包索引，替代默认 PyPI 源；uv.lock 记录具体版本、来源和校验信息。
+default = true
+
+[tool.pytest.ini_options]
+# pytest-asyncio 自动处理异步测试函数，无需逐个添加 asyncio 标记。
+asyncio_mode = "auto"
+# 将后端目录加入导入路径，使根目录运行 pytest 时可直接 import app。
+pythonpath = ["apps/server"]
+# Python 测试范围；浏览器测试在根目录 tests，由 Playwright 单独运行。
+testpaths = ["apps/server/tests"]
+# 忽略 DeprecationWarning 类弃用提示；测试失败和其他类别警告仍会显示。
+filterwarnings = ["ignore::DeprecationWarning"]

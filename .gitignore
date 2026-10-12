@@ -1,0 +1,55 @@
+# 本地数据与 uv 虚拟环境；依赖声明和锁文件仍然提交。
+**/data
+.venv
+# Python 字节码与解释器生成文件，可从源码重新生成。
+__pycache__/
+*.py[cod]
+*$py.class
+# 其他常见虚拟环境目录，避免提交机器相关的二进制依赖。
+env/
+venv/
+env/
+ENV/
+# 打包和构建产物，前端生产文件由 npm run build 生成。
+build/
+dist/
+*.egg-info/
+eggs/
+# 日志与临时文件，不作为项目源码保存。
+*.log
+*.tmp
+# 编辑器本机配置。
+idea/
+vscode/
+# 测试环境、覆盖率报告和测试缓存。
+tox/
+nox/
+coverage
+pytest_cache/
+# Notebook 自动保存副本。
+ipynb_checkpoints/
+# 预留的本机应用配置与 SQLite 数据文件。
+local_settings.py
+db.sqlite3
+# 操作系统生成的目录元数据。
+DS_Store
+Thumbs.db
+# 本地模型、实验结果与序列化数据。
+models/
+results/
+*.pkl
+# 本项目的临时资源、npm 依赖及 uv / npm / 浏览器下载缓存。
+tmp/
+node_modules/
+.cache/
+# 环境配置可能含密钥，不提交；仅保留带注释的空值模板 .env.example。
+.env
+.env.*
+!.env.example
+# pytest 缓存、Playwright 报告与录屏输出；保留源码测试和录制脚本。
+.pytest_cache/
+test-results/
+playwright-report/
+output/
+# TypeScript 增量构建的机器生成状态文件。
+*.tsbuildinfo

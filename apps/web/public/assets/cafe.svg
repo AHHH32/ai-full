@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 900">
+<defs><linearGradient id="wall" x2="0" y2="1"><stop stop-color="#142b33"/><stop offset="1" stop-color="#30444a"/></linearGradient><radialGradient id="light"><stop stop-color="#edb65f" stop-opacity=".48"/><stop offset="1" stop-color="#edb65f" stop-opacity="0"/></radialGradient><linearGradient id="glass" x2="0" y2="1"><stop stop-color="#153845"/><stop offset="1" stop-color="#396473"/></linearGradient></defs>
+<path fill="url(#wall)" d="M0 0h1000v900H0z"/><circle cx="773" cy="259" r="270" fill="url(#light)"/>
+<rect x="48" y="88" width="544" height="559" rx="8" fill="#0a1c24"/><rect x="65" y="103" width="508" height="520" fill="url(#glass)"/>
+<path d="M73 524h494v99H73z" fill="#263b46"/><path d="M91 503v-90h61v90m45 0V361h87v142m56 0V404h54v99m54 0V344h95v159" fill="#142a35"/>
+<g fill="#dcb676" opacity=".65"><path d="M217 382h9v13h-9zm29 0h9v13h-9zm-29 32h9v13h-9zm268 -49h8v12h-8zm25 0h8v12h-8z"/></g>
+<g stroke="#9ab8c5" stroke-width="2" opacity=".4"><path d="M100 150l-10 70m80 -49l-15 112m-30 96l-12 78m146 -265l-20 132m74 -70l-13 97m64 -193l-22 143m68 8l-17 96m69 -208l-21 131m-209 121l-18 116m-67 -62l-16 78m345 -139l-15 132"/></g>
+<path d="M315 101v526M63 357h511" stroke="#15252b" stroke-width="15"/>
+<path d="M749 0v182" stroke="#71604b" stroke-width="5"/><path d="M698 181h102l36 54H662z" fill="#d1a76d"/><ellipse cx="750" cy="235" rx="85" ry="9" fill="#f6d89a"/>
+<rect x="664" y="335" width="253" height="175" fill="#21343a" stroke="#8a6c47" stroke-width="8"/><text x="790" y="415" text-anchor="middle" fill="#ceb58c" font-family="Georgia,serif" font-size="30">AFTER THE RAIN</text><text x="790" y="457" text-anchor="middle" fill="#7f989d" font-family="Georgia,serif" font-size="16">coffee &amp; little stories</text>
+<path d="M0 712q500 -68 1000 0v188H0z" fill="#40372d"/><path d="M0 724q500 -64 1000 0" stroke="#977650" stroke-width="5"/>
+<ellipse cx="200" cy="747" rx="64" ry="18" fill="#1f2c31" opacity=".5"/><path d="M156 696h68l-9 48h-49z" fill="#e7dcc4"/><path d="M224 706q34 0 17 27h-22" fill="none" stroke="#e7dcc4" stroke-width="9"/><ellipse cx="190" cy="696" rx="34" ry="8" fill="#685345"/>
+<path d="M829 707v-44m-1 32q-66 -13 -37 -56 34 6 38 33m1 20q64 -30 35 -57 -39 5 -35 40" stroke="#426d57" stroke-width="9" fill="#41684f"/><path d="M790 701h81l-12 52h-58z" fill="#956c4f"/>
+</svg>
