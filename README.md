@@ -180,6 +180,6 @@ npm run test:e2e      # 先启动 npm start；Chrome / WebRTC Mock 端到端测�
 
 Docker 保留为可选 Linux 启动方案：`docker compose up --build`，使用 host 网络连接 aiortc UDP。当前交付推荐上述本机启动；Docker 构建未在本轮验证。
 
-## 8. 投入时间与两周演进
+## 8. 投入时间
 
-**累计投入约 30 小时**（作者提供的估算，包含设计、实现、调试、测试与交付整理）。
+**累计投入约 30 小时**
